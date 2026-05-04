@@ -1,0 +1,931 @@
+---
+import { translations, type Locale } from '../i18n/translations';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+const locale = (Astro.currentLocale ?? 'en') as Locale;
+const t = translations[locale];
+const enUrl = getRelativeLocaleUrl('en', '');
+const esUrl = getRelativeLocaleUrl('es', '');
+---
+
+<!-- Status bar -->
+<header class="statusbar">
+	<div class="statusbar-inner shell">
+		<div class="sb-brand">
+			<span class="blk"></span> just-use-nan<span class="sb-dot">.</span>
+		</div>
+		<nav class="sb-nav">
+			<a href="#problem">{t['nav.problem']}</a>
+			<a href="#thesis">{t['nav.thesis']}</a>
+			<a href="#receipts">{t['nav.receipts']}</a>
+			<a href="#code">{t['nav.code']}</a>
+		</nav>
+		<div class="sb-meta">
+			<div class="lang-toggle">
+				<a
+					href={esUrl}
+					class:list={['lang-opt', { 'is-active': locale === 'es' }]}>ES</a
+				>
+				<span class="lang-sep">/</span>
+				<a
+					href={enUrl}
+					class:list={['lang-opt', { 'is-active': locale === 'en' }]}>EN</a
+				>
+			</div>
+			<span class="sb-meta-sep">·</span>
+			v1.0 · <span class="live"></span> LIVE
+		</div>
+	</div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+	<div class="shell">
+		<pre
+			class="hero-ascii"
+			aria-hidden="true">+--[ TOKEN BILLING — STOP. ]----------------------------------------------------+
+| flat rate or get hostaged                                                      |
++------------------------------------------------------------------------------+</pre>
+
+		<div class="hero-eyebrow">
+			<span style="color:var(--hi);">{t['hero.eyebrow.1']}</span>
+			<span style="color:var(--ink-faint);">/</span>
+			<b>{t['hero.eyebrow.2']}</b>
+			<span style="color:var(--ink-faint);">/</span>
+			<span>{t['hero.eyebrow.3']}</span>
+		</div>
+
+		<h1 class="hero-h1 t-jumbo" set:html={t['hero.h1']} />
+
+		<p class="hero-sub t-lede" set:html={t['hero.sub']} />
+
+		<div class="hero-cta">
+			<a
+				href="#code"
+				class="btn btn--solid btn--hi btn--big"
+				set:html={t['hero.cta.primary']}
+			/>
+			<a href="#problem" class="btn-link">{t['hero.cta.secondary']}</a>
+		</div>
+	</div>
+</section>
+
+<main>
+	<!-- // 01_THE_PROBLEM -->
+	<section class="sect" id="problem">
+		<div class="shell">
+			<div class="sect-head">
+				<div class="sect-num">// 01_PROBLEM</div>
+				<h2 class="sect-title t-display">{t['problem.title']}</h2>
+				<div class="sect-kicker t-mono-cap">{t['problem.kicker']}</div>
+			</div>
+			<div class="sect-rule"></div>
+
+			<p class="sect-lede t-body" set:html={t['problem.lede']} />
+
+			<!-- Compare table -->
+			<div class="compare">
+				<div class="compare-head">
+					<span class="compare-loud">{t['problem.compare.headLeft']}</span>
+					<span>{t['problem.compare.headRight']}</span>
+				</div>
+				<div class="compare-row">
+					<span class="compare-loud">{t['problem.compare.r1L']}</span>
+					<span class="compare-ok">{t['problem.compare.r1R']}</span>
+				</div>
+				<div class="compare-row">
+					<span class="compare-loud">{t['problem.compare.r2L']}</span>
+					<span class="compare-ok">{t['problem.compare.r2R']}</span>
+				</div>
+				<div class="compare-row">
+					<span class="compare-loud">{t['problem.compare.r3L']}</span>
+					<span class="compare-ok">{t['problem.compare.r3R']}</span>
+				</div>
+				<div class="compare-row">
+					<span class="compare-loud">{t['problem.compare.r4L']}</span>
+					<span class="compare-ok">{t['problem.compare.r4R']}</span>
+				</div>
+				<div class="compare-row">
+					<span class="compare-loud">{t['problem.compare.r5L']}</span>
+					<span class="compare-ok">{t['problem.compare.r5R']}</span>
+				</div>
+				<div class="compare-row">
+					<span class="compare-loud">{t['problem.compare.r6L']}</span>
+					<span class="compare-ok">{t['problem.compare.r6R']}</span>
+				</div>
+				<div class="compare-row">
+					<span class="compare-loud">{t['problem.compare.r7L']}</span>
+					<span class="compare-ok">{t['problem.compare.r7R']}</span>
+				</div>
+				<div class="compare-row">
+					<span class="compare-loud">{t['problem.compare.r8L']}</span>
+					<span class="compare-ok">{t['problem.compare.r8R']}</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- // 02_THE_NUMBERS -->
+	<section class="sect">
+		<div class="shell">
+			<div class="sect-head">
+				<div class="sect-num">// 02_NUMBERS</div>
+				<h2 class="sect-title t-display">{t['numbers.title']}</h2>
+				<div class="sect-kicker t-mono-cap">{t['numbers.kicker']}</div>
+			</div>
+			<div class="sect-rule"></div>
+
+			<div class="stats-grid">
+				<div class="stat">
+					<div class="stat-value t-jumbo" style="color:var(--hi);">€70</div>
+					<div class="stat-footer t-mono-cap">{t['numbers.s1']}</div>
+				</div>
+				<div class="stat">
+					<div class="stat-value t-jumbo">96GB</div>
+					<div class="stat-footer t-mono-cap">{t['numbers.s2']}</div>
+				</div>
+				<div class="stat">
+					<div class="stat-value t-jumbo" style="color:var(--loud);">0</div>
+					<div class="stat-footer t-mono-cap">{t['numbers.s3']}</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- // 03_THE_THESIS · manifesto -->
+	<section class="sect" id="thesis">
+		<div class="shell">
+			<div class="sect-head">
+				<div class="sect-num">// 03_THESIS</div>
+				<h2 class="sect-title t-display">{t['thesis.title']}</h2>
+				<div class="sect-kicker t-mono-cap">{t['thesis.kicker']}</div>
+			</div>
+			<div class="sect-rule"></div>
+		</div>
+
+		<div class="shell" style="padding-top: 0;">
+			<div class="manifesto">
+				<div class="manifesto-corners">
+					<span class="corner corner-tl">+</span>
+					<span class="corner corner-tr">+</span>
+					<span class="corner corner-bl">+</span>
+					<span class="corner corner-br">+</span>
+				</div>
+				<div class="manifesto-body" set:html={t['thesis.body']} />
+			</div>
+		</div>
+	</section>
+
+	<!-- // 04_WHAT_YOULOSE -->
+	<section class="sect">
+		<div class="shell">
+			<div class="sect-head">
+				<div class="sect-num">// 04_LOSS</div>
+				<h2 class="sect-title t-display">{t['loss.title']}</h2>
+				<div class="sect-kicker t-mono-cap">{t['loss.kicker']}</div>
+			</div>
+			<div class="sect-rule"></div>
+
+			<div class="cards-grid">
+				<div class="card term">
+					<div class="card-bar">// PREDICTABLE COSTS</div>
+					<div class="card-body t-body">{t['loss.c1']}</div>
+				</div>
+				<div class="card term">
+					<div class="card-bar">// PRODUCT VELOCITY</div>
+					<div class="card-body t-body">{t['loss.c2']}</div>
+				</div>
+				<div class="card term">
+					<div class="card-bar">// USER EXPERIENCE</div>
+					<div class="card-body t-body">{t['loss.c3']}</div>
+				</div>
+				<div class="card term">
+					<div class="card-bar">// DATA SOVEREIGNTY</div>
+					<div class="card-body t-body">{t['loss.c4']}</div>
+				</div>
+				<div class="card term">
+					<div class="card-bar">// MODEL CHOICE</div>
+					<div class="card-body t-body">{t['loss.c5']}</div>
+				</div>
+				<div class="card term">
+					<div class="card-bar">// EXIT VELOCITY</div>
+					<div class="card-body t-body">{t['loss.c6']}</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- // 05_CODE -->
+	<section class="sect" id="code">
+		<div class="shell">
+			<div class="sect-head">
+				<div class="sect-num">// 05_CODE</div>
+				<h2 class="sect-title t-display">{t['code.title']}</h2>
+				<div class="sect-kicker t-mono-cap">{t['code.kicker']}</div>
+			</div>
+			<div class="sect-rule"></div>
+
+			<p class="sect-lede t-body">{t['code.lede']}</p>
+
+			<div class="code-compare">
+				<div class="term">
+					<div class="card-bar" style="color:var(--loud);">
+						$ closed API · metered
+					</div>
+					<div class="card-body code-body">
+						client = <span class="keyword">OpenAI</span>(<br />
+						&nbsp;&nbsp;api_key=<span class="string">"sk-..."</span><br />
+						)<br />
+						<br />
+						response = client.chat.completions.create(<br />
+						&nbsp;&nbsp;model=<span class="string">"gpt-4o"</span>,<br />
+						&nbsp;&nbsp;messages=your_data<br />
+						)<br />
+						<span class="comment"># meter spinning · invoice growing</span>
+					</div>
+				</div>
+				<div class="term">
+					<div class="card-bar" style="color:var(--ok);">$ NaN · flat rate</div>
+					<div class="card-body code-body">
+						client = <span class="keyword">OpenAI</span>(<br />
+						&nbsp;&nbsp;api_key=<span class="string">"sk-..."</span>,<br />
+						&nbsp;&nbsp;base_url=<span class="string"
+							>"https://nan.builders/v1"</span
+						><br />
+						)<br />
+						<br />
+						response = client.chat.completions.create(<br />
+						&nbsp;&nbsp;model=<span class="string">"qwen3.6"</span>,<br />
+						&nbsp;&nbsp;messages=your_data<br />
+						)<br />
+						<span class="comment"># €70/month · meter never started</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- // 06_RECEIPTS · ToS quotes -->
+	<section class="sect" id="receipts">
+		<div class="shell">
+			<div class="sect-head">
+				<div class="sect-num">// 06_RECEIPTS</div>
+				<h2 class="sect-title t-display">{t['receipts.title']}</h2>
+				<div class="sect-kicker t-mono-cap">{t['receipts.kicker']}</div>
+			</div>
+			<div class="sect-rule"></div>
+
+			<div class="tos-strip">
+				<span class="tos-quote">{t['receipts.q1']}</span>
+				<span class="tos-sep">//</span>
+				<span class="tos-quote">{t['receipts.q2']}</span>
+				<span class="tos-sep">//</span>
+				<span class="tos-quote">{t['receipts.q3']}</span>
+				<span class="tos-sep">//</span>
+				<span class="tos-quote">{t['receipts.q4']}</span>
+				<span class="tos-sep">//</span>
+				<span class="tos-quote">{t['receipts.q5']}</span>
+				<span class="tos-sep">//</span>
+				<span class="tos-quote">{t['receipts.q6']}</span>
+				<span class="tos-sep">//</span>
+				<span class="tos-quote">{t['receipts.q7']}</span>
+				<span class="tos-sep">//</span>
+				<span class="tos-quote">{t['receipts.q8']}</span>
+			</div>
+
+			<p class="tos-footer t-h3">{t['receipts.footer']}</p>
+		</div>
+	</section>
+</main>
+
+<!-- // 07_CTA -->
+<section class="sect cta-section">
+	<div class="shell" style="text-align: center;">
+		<div class="sect-head" style="justify-content: center;">
+			<div class="sect-num">// 07_CTA</div>
+			<h2 class="sect-title t-display" style="text-align: center;">
+				{t['cta.title']}
+			</h2>
+			<div class="sect-kicker t-mono-cap">{t['cta.kicker']}</div>
+		</div>
+		<div class="sect-rule" style="margin: var(--s-3) auto var(--s-8);"></div>
+
+		<p class="sect-lede t-body" style="margin-left: auto; margin-right: auto;">
+			{t['cta.lede']}
+		</p>
+
+		<div
+			class="hero-cta"
+			style="justify-content: center; margin-top: var(--s-8);"
+		>
+			<a
+				href="https://nan.builders"
+				class="btn btn--solid btn--hi btn--big"
+				set:html={t['cta.primary']}
+			/>
+			<a href="https://nan.builders/docs" class="btn-link"
+				>{t['cta.secondary']}</a
+			>
+		</div>
+
+		<div class="brut-rule hi" style="margin-top: var(--s-10);"></div>
+
+		<div class="statusstrip" style="margin-top: var(--s-6);">
+			<div class="statusstrip-seg" style="background: var(--ok);">
+				<span class="t-mono-cap">{t['cta.strip.1']}</span>
+			</div>
+			<div class="statusstrip-seg" style="background: var(--hi);">
+				<span class="t-mono-cap">{t['cta.strip.2']}</span>
+			</div>
+			<div class="statusstrip-seg" style="background: var(--ink);">
+				<span class="t-mono-cap">{t['cta.strip.3']}</span>
+			</div>
+			<div
+				class="statusstrip-seg"
+				style="background: var(--paper-deep); border-color: var(--line);"
+			>
+				<span class="t-mono-cap" style="color: var(--ink);"
+					>{t['cta.strip.4']}</span
+				>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Footer -->
+<footer class="foot">
+	<div class="shell">
+		<div class="foot-bottom">
+			<span>{t['foot.tag']}</span>
+			<span>
+				<a href="https://github.com/barckcode/just-use-nan">{t['foot.l1']}</a>
+				<span style="color:var(--ink-faint); margin: 0 var(--s-2);">/</span>
+				<a href="https://nan.builders/docs">{t['foot.l2']}</a>
+				<span style="color:var(--ink-faint); margin: 0 var(--s-2);">/</span>
+				<a href="https://nan.builders">{t['foot.l3']}</a>
+			</span>
+		</div>
+	</div>
+</footer>
+
+<style is:global>
+	/* ---- Status bar ---- */
+	.statusbar {
+		position: sticky;
+		top: 0;
+		z-index: 50;
+		background: var(--paper);
+		border-bottom: var(--r1) solid var(--line);
+	}
+	.statusbar-inner {
+		display: flex;
+		align-items: center;
+		gap: var(--s-5);
+		padding: var(--s-3) 0;
+		font-family: var(--mono);
+		font-size: 12px;
+	}
+	.sb-brand {
+		display: flex;
+		align-items: center;
+		gap: var(--s-2);
+		font-weight: 700;
+	}
+	.sb-brand .blk {
+		display: inline-block;
+		width: 12px;
+		height: 12px;
+		background: var(--hi);
+	}
+	.sb-brand .sb-dot {
+		color: var(--ink-faint);
+	}
+	.sb-nav {
+		display: flex;
+		gap: var(--s-5);
+		margin-left: auto;
+	}
+	.sb-nav a {
+		color: var(--ink-soft);
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		font-size: 11px;
+	}
+	.sb-nav a:hover {
+		color: var(--ink);
+	}
+	.sb-meta {
+		display: flex;
+		align-items: center;
+		gap: var(--s-2);
+		color: var(--ink-mute);
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		font-size: 11px;
+	}
+	.sb-meta .live {
+		width: 8px;
+		height: 8px;
+		background: var(--ok);
+	}
+	.sb-meta-sep {
+		color: var(--ink-faint);
+	}
+
+	/* ---- Lang toggle ---- */
+	.lang-toggle {
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
+		background: transparent;
+		border: var(--r1) solid var(--line);
+		padding: 2px 6px;
+		font-family: var(--mono);
+		font-size: 11px;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--ink-mute);
+		cursor: pointer;
+	}
+	.lang-toggle:hover {
+		border-color: var(--ink);
+		color: var(--ink);
+	}
+	.lang-toggle .lang-opt {
+		color: var(--ink-faint);
+		text-decoration: none;
+	}
+	.lang-toggle .lang-opt.is-active {
+		color: var(--hi);
+		font-weight: 700;
+	}
+	.lang-toggle .lang-sep {
+		color: var(--ink-faint);
+	}
+
+	/* ---- Hero ---- */
+	.hero {
+		padding: var(--s-12) 0 var(--s-10);
+		border-bottom: var(--r1) solid var(--line);
+	}
+	.hero-ascii {
+		font-family: var(--mono);
+		font-size: 10px;
+		line-height: 1;
+		color: var(--ink-faint);
+		white-space: pre;
+		margin: 0 0 var(--s-6);
+	}
+	.hero-eyebrow {
+		display: flex;
+		gap: var(--s-3);
+		align-items: center;
+		flex-wrap: wrap;
+		font-size: 11px;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		color: var(--ink-mute);
+		margin: 0 0 var(--s-5);
+	}
+	.hero-eyebrow b {
+		color: var(--ink);
+	}
+	.hero-eyebrow .sep {
+		color: var(--ink-faint);
+	}
+	.hero-h1 {
+		line-height: var(--lead-jumbo);
+		letter-spacing: var(--track-jumbo);
+		margin: 0 0 var(--s-6);
+	}
+	.hero-h1 .arrow {
+		color: var(--hi);
+		margin-right: 0.06em;
+	}
+	.hero-sub {
+		font-family: var(--sans);
+		font-size: 17px;
+		line-height: 1.55;
+		max-width: 60ch;
+		color: var(--ink-soft);
+		margin: 0 0 var(--s-8);
+	}
+	.hero-sub b {
+		color: var(--ink);
+	}
+	.hero-cta {
+		display: flex;
+		gap: var(--s-3);
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	/* ---- Buttons ---- */
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--s-2);
+		font-family: var(--mono);
+		font-weight: 500;
+		font-size: 13px;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		padding: var(--s-2) var(--s-4);
+		border: var(--r1) solid var(--ink);
+		background: transparent;
+		color: var(--ink);
+		cursor: pointer;
+		transition:
+			background var(--press-fast),
+			color var(--press-fast);
+		text-decoration: none;
+	}
+	.btn:hover {
+		background: var(--ink);
+		color: var(--paper);
+	}
+	.btn--big {
+		font-size: 16px;
+		padding: var(--s-3) var(--s-5);
+	}
+	.btn--solid {
+		background: var(--ink);
+		color: var(--paper);
+	}
+	.btn--solid.btn--hi {
+		background: var(--hi);
+		border-color: var(--hi);
+		color: var(--paper);
+	}
+	.btn--solid.btn--hi:hover {
+		background: var(--hi-deep);
+		border-color: var(--hi-deep);
+	}
+	.btn-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
+		font-family: var(--mono);
+		font-size: 13px;
+		color: var(--hi);
+		border-bottom: var(--r1) solid transparent;
+		padding: 2px 0;
+	}
+	.btn-link::before {
+		content: '> ';
+		color: var(--hi);
+	}
+	.btn-link:hover {
+		border-bottom-color: var(--hi);
+		color: var(--ghost);
+	}
+	.btn-link:hover::before {
+		color: var(--ghost);
+	}
+
+	/* ---- Section ---- */
+	.sect {
+		padding: var(--s-12) 0;
+		border-bottom: var(--r1) solid var(--line);
+	}
+	.sect-head {
+		display: grid;
+		grid-template-columns: auto 1fr auto;
+		align-items: end;
+		gap: var(--s-5);
+		margin-bottom: var(--s-3);
+	}
+	.sect-num {
+		font-family: var(--mono);
+		font-weight: 700;
+		font-size: 12px;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--hi);
+	}
+	.sect-title {
+		line-height: 1;
+		letter-spacing: -0.03em;
+		margin: 0;
+	}
+	.sect-kicker {
+		font-size: 11px;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--ink-mute);
+	}
+	.sect-rule {
+		height: 4px;
+		background: var(--ink);
+		margin: var(--s-3) 0 var(--s-8);
+	}
+	.sect-lede {
+		font-family: var(--sans);
+		font-size: 17px;
+		line-height: 1.55;
+		max-width: 70ch;
+		color: var(--ink-soft);
+		margin: 0 0 var(--s-8);
+	}
+	.sect-lede b,
+	.sect-lede strong {
+		color: var(--ink);
+	}
+
+	/* ---- Term / Card ---- */
+	.term {
+		background: var(--paper-deep);
+		border: var(--r1) solid var(--line);
+	}
+	.card-bar {
+		font-family: var(--mono);
+		font-size: 11px;
+		letter-spacing: var(--track-label);
+		text-transform: uppercase;
+		color: var(--hi);
+		background: var(--paper);
+		border-bottom: var(--r1) solid var(--line);
+		padding: var(--s-2) var(--s-4);
+		font-weight: 500;
+	}
+	.card-body {
+		padding: var(--s-4);
+		font-family: var(--sans);
+		font-size: 14px;
+		line-height: 1.55;
+		color: var(--ink-soft);
+	}
+
+	.cards-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0;
+		border: var(--r1) solid var(--line);
+	}
+	.cards-grid .card {
+		border-right: var(--r1) solid var(--line);
+		border-bottom: var(--r1) solid var(--line);
+	}
+	.cards-grid .card:nth-child(3n) {
+		border-right: none;
+	}
+
+	/* ---- Compare table ---- */
+	.compare {
+		border: var(--r1) solid var(--line);
+	}
+	.compare-head {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		border-bottom: var(--r1) solid var(--line);
+	}
+	.compare-head span {
+		font-family: var(--mono);
+		font-weight: 700;
+		font-size: 13px;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		padding: var(--s-3) var(--s-4);
+	}
+	.compare-loud {
+		color: var(--loud);
+	}
+	.compare-ok {
+		color: var(--ok);
+	}
+	.compare-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		border-bottom: var(--r1) solid var(--line-soft);
+	}
+	.compare-row:last-child {
+		border-bottom: none;
+	}
+	.compare-row span {
+		font-family: var(--mono);
+		font-size: 13px;
+		line-height: 1.5;
+		padding: var(--s-3) var(--s-4);
+		color: var(--ink-soft);
+	}
+
+	/* ---- Stats ---- */
+	.stats-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: var(--s-5);
+	}
+	.stat {
+		background: var(--paper-deep);
+		border: var(--r1) solid var(--line);
+		padding: var(--s-6) var(--s-5);
+	}
+	.stat-value {
+		margin: 0 0 var(--s-3);
+	}
+	.stat-footer {
+		color: var(--ink-mute);
+	}
+
+	/* ---- Manifesto ---- */
+	.manifesto {
+		position: relative;
+		border: var(--r3) solid var(--ink);
+		background: var(--paper-deep);
+		padding: var(--s-10) var(--s-8);
+		margin: var(--s-6) 0;
+		min-height: 200px;
+		display: flex;
+		align-items: center;
+	}
+	.manifesto-corners {
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+	}
+	.manifesto-corners .corner {
+		font-family: var(--mono);
+		font-size: 14px;
+		font-weight: 700;
+		color: var(--ink);
+	}
+	.corner-tl {
+		top: 6px;
+		left: 10px;
+	}
+	.corner-tr {
+		top: 6px;
+		right: 10px;
+	}
+	.corner-bl {
+		bottom: 6px;
+		left: 10px;
+	}
+	.corner-br {
+		bottom: 6px;
+		right: 10px;
+	}
+	.manifesto-body {
+		font-family: var(--mono);
+		font-size: clamp(18px, 2.5vw, 28px);
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.02em;
+		line-height: 1.6;
+		color: var(--ink);
+		width: 100%;
+	}
+	.manifesto-body span {
+		display: block;
+	}
+
+	/* ---- Code blocks ---- */
+	.code-compare {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--s-5);
+	}
+	.code-body {
+		font-family: var(--mono);
+		font-size: 13px;
+		line-height: 1.6;
+		padding: var(--s-4);
+		overflow-x: auto;
+		color: var(--ink);
+		white-space: pre;
+	}
+	.code-body .keyword {
+		color: var(--hi);
+		font-weight: 700;
+	}
+	.code-body .string {
+		color: var(--ghost);
+	}
+	.code-body .comment {
+		color: var(--ink-faint);
+	}
+
+	/* ---- ToS strip ---- */
+	.tos-strip {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--s-3) var(--s-4);
+		padding: var(--s-4) 0;
+		border-top: var(--r1) solid var(--line);
+		border-bottom: var(--r1) solid var(--line);
+		margin-bottom: var(--s-6);
+	}
+	.tos-quote {
+		font-family: var(--mono);
+		font-size: 12px;
+		line-height: 1.5;
+		color: var(--loud);
+		letter-spacing: 0.02em;
+	}
+	.tos-sep {
+		font-family: var(--mono);
+		font-size: 11px;
+		color: var(--ink-faint);
+		letter-spacing: var(--track-label);
+		text-transform: uppercase;
+	}
+	.tos-footer {
+		text-align: center;
+		color: var(--ink);
+		margin-top: var(--s-6);
+	}
+
+	/* ---- Status strip ---- */
+	.statusstrip {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		border: var(--r1) solid var(--line);
+	}
+	.statusstrip-seg {
+		padding: var(--s-3) var(--s-4);
+		text-align: center;
+	}
+	.statusstrip-seg .t-mono-cap {
+		color: var(--paper);
+	}
+
+	/* ---- Footer ---- */
+	.foot {
+		padding: var(--s-8) 0 var(--s-6);
+		border-top: var(--r1) solid var(--line);
+	}
+	.foot-bottom {
+		display: flex;
+		justify-content: space-between;
+		gap: var(--s-5);
+		font-family: var(--mono);
+		font-size: 11px;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--ink-mute);
+		flex-wrap: wrap;
+	}
+	.foot-bottom a {
+		color: var(--ink-soft);
+	}
+	.foot-bottom a:hover {
+		color: var(--ink);
+	}
+
+	/* ---- Responsive ---- */
+	@media (max-width: 1000px) {
+		.cards-grid {
+			grid-template-columns: 1fr 1fr;
+		}
+		.cards-grid .card:nth-child(3n) {
+			border-right: var(--r1) solid var(--line);
+		}
+		.cards-grid .card:nth-child(2n) {
+			border-right: none;
+		}
+		.stats-grid {
+			grid-template-columns: 1fr 1fr;
+		}
+		.stats-grid .stat:last-child {
+			grid-column: 1 / -1;
+		}
+		.code-compare {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.cards-grid {
+			grid-template-columns: 1fr;
+		}
+		.cards-grid .card {
+			border-right: none !important;
+		}
+		.stats-grid {
+			grid-template-columns: 1fr;
+		}
+		.stats-grid .stat:last-child {
+			grid-column: auto;
+		}
+		.sect-head {
+			grid-template-columns: 1fr;
+			gap: var(--s-2);
+		}
+		.sect-kicker {
+			order: -1;
+		}
+		.compare-head,
+		.compare-row {
+			grid-template-columns: 1fr;
+		}
+		.compare-row span:first-child {
+			border-bottom: var(--r1) solid var(--line-soft);
+		}
+		.statusstrip {
+			grid-template-columns: 1fr 1fr;
+		}
+		.hero-h1 {
+			font-size: 40px;
+		}
+	}
+</style>
