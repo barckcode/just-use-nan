@@ -31,11 +31,11 @@ bun dev
 
 ## Commands
 
-| Command           | Action                              |
-| :---------------- | :---------------------------------- |
-| `bun dev`         | Start dev server at localhost:4321  |
-| `bun build`       | Build production site to ./dist/    |
-| `bun preview`     | Preview build locally               |
+| Command       | Action                             |
+| :------------ | :--------------------------------- |
+| `bun dev`     | Start dev server at localhost:4321 |
+| `bun build`   | Build production site to ./dist/   |
+| `bun preview` | Preview build locally              |
 
 ## Requirements
 
