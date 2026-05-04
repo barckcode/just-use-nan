@@ -30,18 +30,19 @@ bun dev
 ```text
 /
 ├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets/
+│   └── styles.css
+├── src/
 │   ├── components/
+│   ├── i18n/
 │   ├── layouts/
 │   └── pages/
 └── package.json
 ```
 
-- `src/pages/` – Astro pages and routing
+- `src/pages/` – Astro pages and locale routing (`/`, `/es/`)
 - `src/components/` – Reusable Astro components
 - `src/layouts/` – Page layouts
+- `src/i18n/` – Translation strings (en/es)
 - `public/` – Static assets
 
 ## Development Workflow
@@ -89,7 +90,6 @@ feat(components): add reusable card component
 
 - Follow the existing style in the codebase.
 - Use Astro components for page-level and reusable UI components.
-- Use Tailwind utility classes for styling where appropriate.
 - Aim for accessible elements (labels, `aria-*` where appropriate).
 
 ## Issue Reports and Feature Requests
