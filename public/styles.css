@@ -1,0 +1,261 @@
+/* ============================================================
+   JUN — tokens.css
+   Drop into any project. Pair with base.css.
+   Terminal/TUI vocabulary with a brutalist edge.
+   ============================================================ */
+
+:root{
+  /* ============================================================
+     PRIMITIVES (oklch theme layer)
+     ============================================================ */
+  --c-red-400:     oklch(70.4% .191 22.216);
+  --c-amber-400:   oklch(82.8% .189 84.429);
+  --c-amber-900:   oklch(41.4% .112 45.904);
+  --c-violet-300:  oklch(81.1% .111 293.571);
+  --c-violet-400:  oklch(70.2% .183 293.541);
+  --c-violet-600:  oklch(54.1% .281 293.009);
+  --c-emerald-400: oklch(76.5% .177 163.223);
+  --c-n-100: oklch(96%   0 0);
+  --c-n-200: oklch(92.2% 0 0);
+  --c-n-300: oklch(87%   0 0);
+  --c-n-400: oklch(70.8% 0 0);
+  --c-n-500: oklch(55.6% 0 0);
+  --c-n-600: oklch(43.9% 0 0);
+  --c-n-700: oklch(37.1% 0 0);
+  --c-n-800: oklch(26.9% 0 0);
+  --c-n-850: oklch(20%   0 0);
+  --c-n-900: oklch(16%   0 0);
+  --c-n-950: oklch(11%   0 0);
+
+  /* ============================================================
+     SURFACES
+     ============================================================ */
+  --paper:        var(--c-n-950);  /* page canvas */
+  --paper-deep:   var(--c-n-900);  /* card surface */
+  --paper-up:     var(--c-n-850);  /* inset wells, pre */
+
+  /* ============================================================
+     LINES
+     ============================================================ */
+  --line:         var(--c-n-700);  /* default border */
+  --line-soft:    var(--c-n-800);  /* secondary divider */
+
+  /* ============================================================
+     TEXT
+     ============================================================ */
+  --ink:          var(--c-n-100);  /* headings, body */
+  --ink-soft:     var(--c-n-400);  /* secondary copy */
+  --ink-mute:     var(--c-n-500);  /* labels, captions */
+  --ink-faint:    var(--c-n-600);  /* brackets, separators */
+
+  /* ============================================================
+     ACCENTS
+     ============================================================ */
+  --hi:           var(--c-violet-400);  /* primary */
+  --hi-deep:      var(--c-violet-600);  /* primary deep */
+  --hi-soft:      var(--c-violet-300);  /* primary soft */
+  --loud:         var(--c-red-400);     /* the screamer */
+  --ghost:        var(--c-amber-400);   /* secondary accent */
+  --ghost-deep:   var(--c-amber-900);
+  --ok:           var(--c-emerald-400); /* success, live */
+
+  /* ============================================================
+     TYPE
+     ============================================================ */
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+  --sans: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* size scale */
+  --text-xs:    11px;  /* mono caps */
+  --text-sm:    13px;  /* code, captions */
+  --text-base:  14px;  /* default mono */
+  --text-body:  16px;  /* sans body */
+  --text-lede:  19px;  /* sans lede */
+  --text-h3:    16px;  /* mono uppercase */
+  --text-h2:    24px;
+  --text-h1:    36px;
+  --text-display: 56px;
+  --text-jumbo:   80px;
+
+  /* tracking */
+  --track-tight:   -0.025em;
+  --track-tighter: -0.035em;
+  --track-jumbo:   -0.045em;
+  --track-label:    0.14em;
+  --track-h3:       0.02em;
+
+  /* leading */
+  --lead-jumbo:   0.92;
+  --lead-display: 0.98;
+  --lead-h1:      1.05;
+  --lead-h2:      1.1;
+  --lead-body:    1.55;
+
+  /* ============================================================
+     SPACING (4px base)
+     ============================================================ */
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3:  12px;
+  --s-4:  16px;   /* base padding */
+  --s-5:  24px;
+  --s-6:  32px;   /* section padding */
+  --s-8:  48px;
+  --s-10: 64px;   /* hero padding */
+  --s-12: 96px;   /* section gap */
+  --s-16: 128px;
+
+  /* ============================================================
+     RULE WEIGHTS — never radius. Always square.
+     ============================================================ */
+  --r1: 1px;
+  --r2: 2px;
+  --r3: 3px;
+  --r4: 4px;
+  /* there is no border-radius token. it is always 0. */
+
+  /* ============================================================
+     CONTAINERS
+     ============================================================ */
+  --shell: 1280px;
+
+  /* ============================================================
+     MOTION
+     ============================================================ */
+  --press-fast: 80ms ease-out;
+  --press-med:  120ms ease-out;
+  --ease-out:    cubic-bezier(0, 0, .2, 1);
+  --ease-in-out: cubic-bezier(.4, 0, .2, 1);
+}
+
+@media (prefers-reduced-motion: reduce){
+  :root{ --press-fast: 0ms; --press-med: 0ms; }
+}
+
+/* ============================================================
+   JUN — base.css
+   Drop in after tokens.css. Provides body defaults, ASCII rule,
+   shell, and the type utility set.
+   ============================================================ */
+
+*{ box-sizing: border-box; }
+html, body{ margin: 0; padding: 0; }
+
+body{
+  font-family: var(--mono);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: var(--text-base);
+  line-height: var(--lead-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection{ background: var(--hi); color: var(--paper); }
+
+a{ color: var(--hi); text-decoration: none; }
+a:hover{ color: var(--ghost); }
+
+/* ============================================================
+   FAINT GRID + SCANLINE BACKGROUND
+   ============================================================ */
+body::before{
+  content:""; position: fixed; inset:0; z-index:0; pointer-events:none;
+  background-image: radial-gradient(var(--line-soft) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.45;
+}
+body::after{
+  content:""; position: fixed; inset:0; z-index:0; pointer-events:none;
+  background: repeating-linear-gradient(0deg, rgba(255,255,255,0.012) 0 1px, transparent 1px 3px);
+}
+main, header, section, footer{ position: relative; z-index: 1; }
+
+/* ============================================================
+   SHELL
+   ============================================================ */
+.shell{
+  max-width: var(--shell);
+  margin: 0 auto;
+  padding: 0 var(--s-6);
+}
+
+/* ============================================================
+   ASCII RULE — divider with optional inline label
+   ============================================================ */
+.ascii-rule{
+  border-top: var(--r2) solid var(--line);
+  border-bottom: var(--r1) solid var(--line);
+  height: 4px;
+  margin: var(--s-6) 0;
+  position: relative;
+}
+.ascii-rule[data-label]::before{
+  content: attr(data-label);
+  position: absolute;
+  top: -10px;
+  left: var(--s-6);
+  background: var(--paper);
+  padding: 0 var(--s-3);
+  font-size: var(--text-xs);
+  letter-spacing: var(--track-label);
+  color: var(--ink-mute);
+  text-transform: uppercase;
+}
+
+/* brutalist solid bar */
+.brut-rule{
+  height: 8px;
+  background: var(--ink);
+  margin: var(--s-8) 0;
+}
+.brut-rule.loud{ background: var(--loud); }
+.brut-rule.hi{   background: var(--hi); }
+
+/* ============================================================
+   TYPE UTILITIES
+   ============================================================ */
+.t-jumbo   { font-family: var(--mono); font-weight: 700; font-size: var(--text-jumbo);   line-height: var(--lead-jumbo);   letter-spacing: var(--track-jumbo); }
+.t-display { font-family: var(--mono); font-weight: 700; font-size: var(--text-display); line-height: var(--lead-display); letter-spacing: var(--track-tighter); }
+.t-h1      { font-family: var(--mono); font-weight: 700; font-size: var(--text-h1);      line-height: var(--lead-h1);      letter-spacing: var(--track-tight); }
+.t-h2      { font-family: var(--mono); font-weight: 700; font-size: var(--text-h2);      line-height: var(--lead-h2);      letter-spacing: -0.015em; }
+.t-h3      { font-family: var(--mono); font-weight: 700; font-size: var(--text-h3);      letter-spacing: var(--track-h3); text-transform: uppercase; }
+.t-lede    { font-family: var(--sans); font-weight: 500; font-size: var(--text-lede);    line-height: 1.5; color: var(--ink); }
+.t-body    { font-family: var(--sans); font-weight: 400; font-size: var(--text-body);    line-height: var(--lead-body); }
+.t-mono-cap{ font-family: var(--mono); font-size: var(--text-xs); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--ink-mute); }
+.t-code    { font-family: var(--mono); font-size: var(--text-sm); color: var(--ghost); }
+
+/* ============================================================
+   HEADLINE TREATMENT FX
+   ============================================================ */
+.fx-block        { background: var(--hi); color: var(--paper); padding: 0 0.06em; display: inline-block; }
+.fx-block.loud   { background: var(--loud); }
+.fx-block.ghost  { background: var(--ghost); color: var(--paper); }
+.fx-bracket::before{ content: "["; color: var(--hi); margin-right: 0.05em; }
+.fx-bracket::after { content: "]"; color: var(--hi); margin-left: 0.05em; }
+.fx-arrow::before  { content: "> "; color: var(--hi); }
+.fx-strike{ position: relative; color: var(--ink-mute); }
+.fx-strike::after{ content:""; position: absolute; left:-2px; right:-2px; top: 52%; height: 4px; background: var(--loud); }
+.fx-outline{ color: transparent; -webkit-text-stroke: 1.5px var(--ink); }
+.fx-accent { color: var(--ghost); }
+.fx-dim    { color: var(--ink-faint); }
+.fx-tag{
+  display: inline-block;
+  font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+  border: var(--r1) solid var(--ink);
+  padding: 1px 6px;
+  vertical-align: middle;
+  font-weight: 500;
+}
+
+/* ============================================================
+   CODE PILL
+   ============================================================ */
+.code-pill{
+  font-family: var(--mono);
+  font-size: var(--text-xs);
+  background: var(--paper);
+  padding: 1px 6px;
+  border: var(--r1) solid var(--line);
+  color: var(--ghost);
+}
