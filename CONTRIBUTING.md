@@ -14,7 +14,7 @@ Setup
 
 ```bash
 # Fork this repo, then clone your fork
-git clone https://github.com/barckcode/just-use-nan.git
+git clone https://github.com/<you>/just-use-nan.git
 cd just-use-nan
 
 # Use the recommended Node.js version (if using nvm)
