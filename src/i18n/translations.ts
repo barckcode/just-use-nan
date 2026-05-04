@@ -101,7 +101,6 @@ const en = {
 	'foot.l1': 'github',
 	'foot.l2': 'docs',
 	'foot.l3': 'join nan',
-	'foot.l4': 'community',
 };
 
 const es: typeof en = {
@@ -210,7 +209,6 @@ const es: typeof en = {
 	'foot.l1': 'github',
 	'foot.l2': 'docs',
 	'foot.l3': 'únete a nan',
-	'foot.l4': 'comunidad',
 };
 
 export type T = typeof en;
