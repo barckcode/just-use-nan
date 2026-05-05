@@ -102,7 +102,7 @@ const en = {
 	'foot.l2': 'docs',
 	'foot.l3': 'join nan',
 
-	'meta.title': 'just-use-nan — Flat-rate GPU inference, open models, no token meter',
+	'meta.title': 'just-use-nan | Flat-rate GPU inference, open models, no token meter',
 	'meta.description':
 		'€70/month. Shared GPU cluster. Open models (Qwen, Gemma, DeepSeek). OpenAI-compatible API. No token billing, no logs, no surprises.',
 };
@@ -214,7 +214,7 @@ const es: typeof en = {
 	'foot.l2': 'docs',
 	'foot.l3': 'únete a nan',
 
-	'meta.title': 'just-use-nan — Inferencia GPU a tarifa fija, modelos abiertos, sin contador de tokens',
+	'meta.title': 'just-use-nan | Inferencia GPU a tarifa fija, modelos abiertos, sin contador de tokens',
 	'meta.description':
 		'70€/mes. Cluster GPU compartido. Modelos abiertos (Qwen, Gemma, DeepSeek). API compatible con OpenAI. Sin billing por token, sin logs, sin sorpresas.',
 };
