@@ -61,11 +61,11 @@ const en = {
 	'loss.c2':
 		'Token meters punish iteration. Long context? Expensive. Tool calls in a loop? Expensive. Reasoning models thinking out loud? Very expensive. You ship worse products because the better version costs too much to test.',
 	'loss.c3':
-		"Free tier capped at 10 messages. Pro tier capped at 200. Why? Not because the model can't handle more — because your margin can't. Your users feel it. They churn. The cap was always about you, not them.",
+		"Free tier capped at 10 messages. Pro tier capped at 200. Why? Not because the model can't handle more. Because your margin can't. Your users feel it. They churn. The cap was always about you, not them.",
 	'loss.c4':
-		"Every prompt you send becomes their training signal. Your competitors' queries. Your customers' secrets. Their next model. Your liability. Reading the ToS doesn't make it disappear — it just confirms it.",
+		"Every prompt you send becomes their training signal. Your competitors' queries. Your customers' secrets. Their next model. Your liability. Reading the ToS doesn't make it disappear. It just confirms it.",
 	'loss.c5':
-		"Open models — Qwen, Gemma, DeepSeek, Llama — closed the gap. They're inside the cluster. You don't have to wait for a closed lab to release the version that's already on Hugging Face. The future is open and it already shipped.",
+		"Open models like Qwen, Gemma, DeepSeek, Llama closed the gap. They're inside the cluster. You don't have to wait for a closed lab to release the version that's already on Hugging Face. The future is open and it already shipped.",
 	'loss.c6':
 		"NaN speaks the OpenAI API. If you ever want to leave, change one base_url and you're out. No proprietary SDK, no bespoke endpoints, no lock-in. The cost of switching is one line of code. That's the deal.",
 
@@ -168,11 +168,11 @@ const es: typeof en = {
 	'loss.c2':
 		'El contador castiga la iteración. ¿Contexto largo? Caro. ¿Tool calls en bucle? Caro. ¿Modelos de razonamiento pensando en voz alta? Carísimo. Envías productos peores porque la versión buena cuesta demasiado de probar.',
 	'loss.c3':
-		'Tier gratis con 10 mensajes. Tier pro con 200. ¿Por qué? No porque el modelo no aguante más — porque tu margen no aguanta. Tus usuarios lo notan. Se van. El cap nunca fue por ellos, fue por ti.',
+		'Tier gratis con 10 mensajes. Tier pro con 200. ¿Por qué? No porque el modelo no aguante más. Porque tu margen no aguanta. Tus usuarios lo notan. Se van. El cap nunca fue por ellos, fue por ti.',
 	'loss.c4':
-		'Cada prompt que mandas se convierte en su señal de entrenamiento. Las queries de tus competidores. Los secretos de tus clientes. Su próximo modelo. Tu responsabilidad legal. Leer los ToS no lo hace desaparecer — sólo lo confirma.',
+		'Cada prompt que mandas se convierte en su señal de entrenamiento. Las queries de tus competidores. Los secretos de tus clientes. Su próximo modelo. Tu responsabilidad legal. Leer los ToS no lo hace desaparecer. Solo lo confirma.',
 	'loss.c5':
-		'Los modelos abiertos — Qwen, Gemma, DeepSeek, Llama — han cerrado la brecha. Están dentro del cluster. No tienes que esperar a que un lab cerrado libere la versión que ya está en Hugging Face. El futuro es abierto y ya llegó.',
+		'Los modelos abiertos como Qwen, Gemma, DeepSeek, Llama han cerrado la brecha. Están dentro del cluster. No tienes que esperar a que un lab cerrado libere la versión que ya está en Hugging Face. El futuro es abierto y ya llegó.',
 	'loss.c6':
 		'NaN habla la API de OpenAI. Si algún día quieres irte, cambias un base_url y estás fuera. Sin SDK propietario, sin endpoints custom, sin lock-in. El coste de cambiar es una línea de código. Ese es el trato.',
 
