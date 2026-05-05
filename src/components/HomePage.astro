@@ -10,7 +10,8 @@ const esUrl = getRelativeLocaleUrl('es', '');
 
 <!-- Status bar -->
 <header class="statusbar">
-	<div class="statusbar-inner shell">
+	<input type="checkbox" id="nav-toggle" class="nav-toggle" />
+	<div class="shell">
 		<div class="sb-brand">
 			<span class="blk"></span> just-use-nan<span class="sb-dot">.</span>
 		</div>
@@ -32,9 +33,14 @@ const esUrl = getRelativeLocaleUrl('es', '');
 					class:list={['lang-opt', { 'is-active': locale === 'en' }]}>EN</a
 				>
 			</div>
-			<span class="sb-meta-sep">·</span>
-			v1.0 · <span class="live"></span> LIVE
+			<span class="sb-meta-sep sb-version">·</span>
+			<span class="sb-version">v1.0 · <span class="live"></span> LIVE</span>
 		</div>
+		<label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+			<span class="burger-line"></span>
+			<span class="burger-line"></span>
+			<span class="burger-line"></span>
+		</label>
 	</div>
 </header>
 
@@ -43,8 +49,8 @@ const esUrl = getRelativeLocaleUrl('es', '');
 	<div class="shell">
 		<pre
 			class="hero-ascii"
-			aria-hidden="true">+--[ TOKEN BILLING | STOP. ]----------------------------------------------------+
-| flat rate or get hostaged                                                      |
+			aria-hidden="true">+--[ TOKEN BILLING | STOP. ]---------------------------------------------------+
+| flat rate or get hostaged                                                    |
 +------------------------------------------------------------------------------+</pre>
 
 		<div class="hero-eyebrow">
@@ -368,6 +374,21 @@ const esUrl = getRelativeLocaleUrl('es', '');
 	</div>
 </footer>
 
+<script>
+	const toggle = document.getElementById('nav-toggle') as HTMLInputElement | null;
+
+	document.addEventListener('click', (e) => {
+		if (!toggle?.checked || !(e.target instanceof Element)) return;
+		if (e.target.closest('.sb-nav a') || !e.target.closest('.statusbar')) {
+			toggle.checked = false;
+		}
+	});
+
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape' && toggle?.checked) toggle.checked = false;
+	});
+</script>
+
 <style is:global>
 	/* ---- Status bar ---- */
 	.statusbar {
@@ -377,7 +398,7 @@ const esUrl = getRelativeLocaleUrl('es', '');
 		background: var(--paper);
 		border-bottom: var(--r1) solid var(--line);
 	}
-	.statusbar-inner {
+	.statusbar .shell {
 		display: flex;
 		align-items: center;
 		gap: var(--s-5);
@@ -606,6 +627,7 @@ const esUrl = getRelativeLocaleUrl('es', '');
 	.sect-title {
 		line-height: 1;
 		letter-spacing: -0.03em;
+		overflow-wrap: anywhere;
 		margin: 0;
 	}
 	.sect-kicker {
@@ -873,7 +895,22 @@ const esUrl = getRelativeLocaleUrl('es', '');
 	}
 
 	/* ---- Responsive ---- */
+	.nav-toggle {
+		display: none;
+	}
+	.nav-toggle-label {
+		display: none;
+	}
+
 	@media (max-width: 1000px) {
+		.statusbar {
+			padding: 0 var(--s-5);
+			padding-top: var(--s-3);
+			padding-bottom: var(--s-3);
+		}
+		.statusbar .shell {
+			padding: 0;
+		}
 		.cards-grid {
 			grid-template-columns: 1fr 1fr;
 		}
@@ -892,9 +929,110 @@ const esUrl = getRelativeLocaleUrl('es', '');
 		.code-compare {
 			grid-template-columns: 1fr;
 		}
+		.sect {
+			padding: var(--s-10) 0;
+		}
+		.hero {
+			padding: var(--s-10) 0 var(--s-8);
+		}
+		.manifesto {
+			padding: var(--s-8) var(--s-6);
+		}
+		.shell {
+			padding: 0 var(--s-5);
+		}
+		.statusbar .shell {
+			gap: var(--s-3);
+		}
+		.sb-nav {
+			position: fixed;
+			top: 49px;
+			left: 0;
+			right: 0;
+			background: var(--paper);
+			border-bottom: var(--r1) solid var(--line);
+			flex-direction: column;
+			align-items: stretch;
+			gap: 0;
+			padding: 0;
+			opacity: 0;
+			visibility: hidden;
+			transform: translateY(-8px);
+			transition:
+				opacity var(--press-med),
+				transform var(--press-med),
+				visibility var(--press-med);
+			z-index: 49;
+		}
+		.sb-nav a {
+			padding: var(--s-4) var(--s-5);
+			border-bottom: var(--r1) solid var(--line-soft);
+			text-align: center;
+		}
+		.lang-toggle .lang-opt {
+			padding: var(--s-2) var(--s-1);
+		}
+		.sb-nav a:last-child {
+			border-bottom: none;
+		}
+
+		.sb-version {
+			display: none;
+		}
+
+		/* Burger button */
+		.nav-toggle-label {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 4px;
+			width: 44px;
+			height: 44px;
+			cursor: pointer;
+			margin-left: auto;
+		}
+		.burger-line {
+			display: block;
+			width: 18px;
+			height: 2px;
+			background: var(--ink);
+			transition: var(--press-med);
+		}
+
+		/* Open state */
+		.statusbar:has(.nav-toggle:checked) .sb-nav {
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(0);
+		}
+		.statusbar:has(.nav-toggle:checked) .burger-line:nth-child(1) {
+			transform: translateY(6px) rotate(45deg);
+		}
+		.statusbar:has(.nav-toggle:checked) .burger-line:nth-child(2) {
+			opacity: 0;
+		}
+		.statusbar:has(.nav-toggle:checked) .burger-line:nth-child(3) {
+			transform: translateY(-6px) rotate(-45deg);
+		}
+		.hero-h1 {
+			font-size: 56px;
+		}
+		.hero-ascii {
+			font-size: min(8px, 1.9vw);
+		}
 	}
 
 	@media (max-width: 600px) {
+		.shell {
+			padding: 0 var(--s-4);
+		}
+		.sect {
+			padding: var(--s-8) 0;
+		}
+		.hero {
+			padding: var(--s-8) 0 var(--s-6);
+		}
 		.cards-grid {
 			grid-template-columns: 1fr;
 		}
@@ -925,7 +1063,50 @@ const esUrl = getRelativeLocaleUrl('es', '');
 			grid-template-columns: 1fr 1fr;
 		}
 		.hero-h1 {
-			font-size: 40px;
+			font-size: 36px;
+		}
+		.hero-ascii {
+			display: none;
+		}
+		.manifesto {
+			padding: var(--s-6) var(--s-4);
+			margin: var(--s-4) 0;
+		}
+		.statusbar .shell {
+			padding: var(--s-2) 0;
+			font-size: 11px;
+		}
+		.sb-meta {
+			font-size: 11px;
+		}
+		.sb-brand .blk {
+			width: 10px;
+			height: 10px;
+		}
+		.tos-quote {
+			font-size: 12px;
+		}
+		.card-body {
+			padding: var(--s-3);
+			font-size: 13px;
+		}
+		.code-body {
+			font-size: 12px;
+			padding: var(--s-3);
+		}
+		.stat {
+			padding: var(--s-4) var(--s-4);
+		}
+		.foot-bottom {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: var(--s-3);
+		}
+	}
+
+	@media (max-width: 400px) {
+		.statusstrip {
+			grid-template-columns: 1fr;
 		}
 	}
 </style>
