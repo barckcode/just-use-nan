@@ -1,0 +1,12 @@
+node_modules
+dist
+.git
+.gitignore
+.github
+.vscode
+.idea
+*.log
+.DS_Store
+README.md
+CONTRIBUTING.md
+LICENSE
