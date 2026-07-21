@@ -1,7 +1,9 @@
 ---
 import { translations, type Locale } from '../i18n/translations';
 import { getRelativeLocaleUrl } from 'astro:i18n';
+import pkg from '../../package.json';
 
+const version = pkg.version;
 const locale = (Astro.currentLocale ?? 'en') as Locale;
 const t = translations[locale];
 const enUrl = getRelativeLocaleUrl('en', '');
@@ -34,7 +36,7 @@ const esUrl = getRelativeLocaleUrl('es', '');
 				>
 			</div>
 			<span class="sb-meta-sep sb-version">·</span>
-			<span class="sb-version">v1.0 · <span class="live"></span> LIVE</span>
+			<span class="sb-version">v{version} · <span class="live"></span> LIVE</span>
 		</div>
 		<label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
 			<span class="burger-line"></span>
@@ -256,7 +258,7 @@ const esUrl = getRelativeLocaleUrl('es', '');
 						client = <span class="keyword">OpenAI</span>(<br />
 						&nbsp;&nbsp;api_key=<span class="string">"sk-..."</span>,<br />
 						&nbsp;&nbsp;base_url=<span class="string"
-							>"https://nan.builders/v1"</span
+							>"https://api.nan.builders/v1"</span
 						><br />
 						)<br />
 						<br />
@@ -362,7 +364,7 @@ const esUrl = getRelativeLocaleUrl('es', '');
 <footer class="foot">
 	<div class="shell">
 		<div class="foot-bottom">
-			<span>{t['foot.tag']}</span>
+			<span>{t['foot.tag'].replace('%v', version)}</span>
 			<span>
 				<a href="https://github.com/barckcode/just-use-nan">{t['foot.l1']}</a>
 				<span style="color:var(--ink-faint); margin: 0 var(--s-2);">/</span>

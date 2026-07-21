@@ -8,7 +8,7 @@ const en = {
 
 	'hero.eyebrow.1': 'INFRASTRUCTURE',
 	'hero.eyebrow.2': 'flat-rate inference',
-	'hero.eyebrow.3': 'no token meter',
+	'hero.eyebrow.3': 'no per-token billing',
 	'hero.h1':
 		'<span class="fx-arrow"></span><span class="fx-block loud">STOP</span> PAYING<br />PER TOKEN FOR<br />MODELS YOU<br /><span class="fx-outline">DON\'T</span> EVEN<br />OWN',
 	'hero.sub':
@@ -24,7 +24,7 @@ const en = {
 	'problem.compare.headRight': 'NaN · flat €70/month',
 	'problem.compare.r1L': '× a buggy loop wakes you up to a $2k bill',
 	'problem.compare.r1R':
-		'✓ burn all the tokens you want · the bill never moves',
+		'✓ unlimited small models · 500M/mo frontier · the bill never moves',
 	'problem.compare.r2L': '× rate limits throttle production at 3am',
 	'problem.compare.r2R':
 		'✓ shared cluster sized for builders who actually ship',
@@ -45,7 +45,7 @@ const en = {
 
 	'numbers.title': 'The numbers.',
 	'numbers.kicker': 'receipts · 100% verified',
-	'numbers.s1': 'flat monthly fee · all you can inference',
+	'numbers.s1': 'flat monthly fee · zero per-token billing',
 	'numbers.s2': 'VRAM per node · NVIDIA RTX PRO 6000 Blackwell',
 	'numbers.s3': 'tokens metered · prompts logged · surprises billed',
 
@@ -65,7 +65,7 @@ const en = {
 	'loss.c4':
 		"Every prompt you send becomes their training signal. Your competitors' queries. Your customers' secrets. Their next model. Your liability. Reading the ToS doesn't make it disappear. It just confirms it.",
 	'loss.c5':
-		"Open models like Qwen, Gemma, DeepSeek, Llama closed the gap. They're inside the cluster. You don't have to wait for a closed lab to release the version that's already on Hugging Face. The future is open and it already shipped.",
+		"Open models like Qwen, Gemma, DeepSeek, MiMo closed the gap. They're inside the cluster. You don't have to wait for a closed lab to release the version that's already on Hugging Face. The future is open and it already shipped.",
 	'loss.c6':
 		"NaN speaks the OpenAI API. If you ever want to leave, change one base_url and you're out. No proprietary SDK, no bespoke endpoints, no lock-in. The cost of switching is one line of code. That's the deal.",
 
@@ -89,22 +89,22 @@ const en = {
 	'cta.title': 'Just use NaN.',
 	'cta.kicker': 'deployment · immediate',
 	'cta.lede':
-		'€70 a month. Shared GPU. Open models. No token meter. No surprise invoices. No prompts logged. The only thing standing between you and a predictable AI bill is the decision to stop feeding the meter.',
+		'€70 a month. Shared GPU. Open models. No per-token billing. No surprise invoices. No prompts logged. The only thing standing between you and a predictable AI bill is the decision to stop feeding the meter.',
 	'cta.primary': 'join the cluster <span>&rarr;</span>',
 	'cta.secondary': 'read the docs',
 	'cta.strip.1': 'flat rate',
 	'cta.strip.2': 'open models',
 	'cta.strip.3': 'zero logs',
-	'cta.strip.4': 'no token meter',
+	'cta.strip.4': 'no per-token billing',
 
-	'foot.tag': '// just-use-nan v1.0 · 2026 · flat-rate inference, open future',
+	'foot.tag': '// just-use-nan v%v · 2026 · flat-rate inference, open future',
 	'foot.l1': 'github',
 	'foot.l2': 'docs',
 	'foot.l3': 'join nan',
 
-	'meta.title': 'just-use-nan | Flat-rate GPU inference, open models, no token meter',
+	'meta.title': 'just-use-nan | Flat-rate GPU inference, open models, no per-token billing',
 	'meta.description':
-		'€70/month. Shared GPU cluster. Open models (Qwen, Gemma, DeepSeek). OpenAI-compatible API. No token billing, no logs, no surprises.',
+		'€70/month. Shared GPU cluster. Open models (Qwen, Gemma, DeepSeek, MiMo). OpenAI-compatible API. No per-token billing, no logs, no surprises.',
 };
 
 const es: typeof en = {
@@ -115,7 +115,7 @@ const es: typeof en = {
 
 	'hero.eyebrow.1': 'INFRAESTRUCTURA',
 	'hero.eyebrow.2': 'inferencia a coste fijo',
-	'hero.eyebrow.3': 'sin contador de tokens',
+	'hero.eyebrow.3': 'sin pago por token',
 	'hero.h1':
 		'<span class="fx-arrow"></span><span class="fx-block loud">DEJA</span> DE PAGAR<br />POR TOKEN POR<br />MODELOS QUE<br /><span class="fx-outline">NO</span> SON<br />TUYOS',
 	'hero.sub':
@@ -132,7 +132,7 @@ const es: typeof en = {
 	'problem.compare.r1L':
 		'× un bucle con bug te despierta con una factura de 2.000$',
 	'problem.compare.r1R':
-		'✓ quema todos los tokens que quieras · la factura no se mueve',
+		'✓ modelos pequeños sin límite · 500M/mes en frontier · la factura no se mueve',
 	'problem.compare.r2L':
 		'× rate limits ahogando producción a las 3 de la mañana',
 	'problem.compare.r2R':
@@ -156,7 +156,7 @@ const es: typeof en = {
 
 	'numbers.title': 'Los números.',
 	'numbers.kicker': 'recibos · 100% verificados',
-	'numbers.s1': 'tarifa mensual fija · barra libre de inferencia',
+	'numbers.s1': 'tarifa mensual fija · cero pago por token',
 	'numbers.s2': 'VRAM por nodo · NVIDIA RTX PRO 6000 Blackwell',
 	'numbers.s3': 'tokens medidos · prompts logueados · sorpresas en factura',
 
@@ -176,7 +176,7 @@ const es: typeof en = {
 	'loss.c4':
 		'Cada prompt que mandas se convierte en su señal de entrenamiento. Las queries de tus competidores. Los secretos de tus clientes. Su próximo modelo. Tu responsabilidad legal. Leer los ToS no lo hace desaparecer. Solo lo confirma.',
 	'loss.c5':
-		'Los modelos abiertos como Qwen, Gemma, DeepSeek, Llama han cerrado la brecha. Están dentro del cluster. No tienes que esperar a que un lab cerrado libere la versión que ya está en Hugging Face. El futuro es abierto y ya llegó.',
+		'Los modelos abiertos como Qwen, Gemma, DeepSeek, MiMo han cerrado la brecha. Están dentro del cluster. No tienes que esperar a que un lab cerrado libere la versión que ya está en Hugging Face. El futuro es abierto y ya llegó.',
 	'loss.c6':
 		'NaN habla la API de OpenAI. Si algún día quieres irte, cambias un base_url y estás fuera. Sin SDK propietario, sin endpoints custom, sin lock-in. El coste de cambiar es una línea de código. Ese es el trato.',
 
@@ -200,23 +200,23 @@ const es: typeof en = {
 	'cta.title': 'Just use NaN.',
 	'cta.kicker': 'despliegue · inmediato',
 	'cta.lede':
-		'70€ al mes. GPU compartida. Modelos abiertos. Sin contador de tokens. Sin facturas sorpresa. Sin prompts logueados. Lo único que se interpone entre tú y una factura de IA predecible es la decisión de dejar de alimentar el contador.',
+		'70€ al mes. GPU compartida. Modelos abiertos. Sin pago por token. Sin facturas sorpresa. Sin prompts logueados. Lo único que se interpone entre tú y una factura de IA predecible es la decisión de dejar de alimentar el contador.',
 	'cta.primary': 'únete al cluster <span>&rarr;</span>',
 	'cta.secondary': 'leer la documentación',
 	'cta.strip.1': 'tarifa fija',
 	'cta.strip.2': 'modelos abiertos',
 	'cta.strip.3': 'zero logs',
-	'cta.strip.4': 'sin contador',
+	'cta.strip.4': 'sin pago por token',
 
 	'foot.tag':
-		'// just-use-nan v1.0 · 2026 · inferencia a coste fijo, futuro abierto',
+		'// just-use-nan v%v · 2026 · inferencia a coste fijo, futuro abierto',
 	'foot.l1': 'github',
 	'foot.l2': 'docs',
 	'foot.l3': 'únete a nan',
 
-	'meta.title': 'just-use-nan | Inferencia GPU a tarifa fija, modelos abiertos, sin contador de tokens',
+	'meta.title': 'just-use-nan | Inferencia GPU a tarifa fija, modelos abiertos, sin pago por token',
 	'meta.description':
-		'70€/mes. Cluster GPU compartido. Modelos abiertos (Qwen, Gemma, DeepSeek). API compatible con OpenAI. Sin billing por token, sin logs, sin sorpresas.',
+		'70€/mes. Cluster GPU compartido. Modelos abiertos (Qwen, Gemma, DeepSeek, MiMo). API compatible con OpenAI. Sin pago por token, sin logs, sin sorpresas.',
 };
 
 export type T = typeof en;
